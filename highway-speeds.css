@@ -1,4 +1,61 @@
-way|z16-[highway] {
-    width: 2px;
-    color: black;
+canvas {
+    background-color: #dff;
+    default-points: false;
+    default-lines: false;
+}
+
+/* base colors and widths */
+
+way[highway] {
+    color: #bbb;
+    width: 1;
+}
+way[highway=motorway] {
+    width: 4;
+}
+way[highway=primary], way[highway=secondary] {
+    width: 2;
+}
+
+/* value-specific styles */
+
+way[highway][maxspeed] {
+    color: red;
+    dashes: 9,3,3,3;
+    z-index: 1;
+}
+way[highway][maxspeed=~/mph$/] {
+    color: blue;
+    dashes: 0;
+    z-index: 1;
+}
+way[highway][maxspeed=~/^2. mph$/] {
+    color: #383;
+}
+way[highway][maxspeed=~/^3. mph$/] {
+    color: #473;
+}
+way[highway][maxspeed=~/^4. mph$/] {
+    color: #563;
+}
+way[highway][maxspeed=~/^5. mph$/] {
+    color: #743;
+}
+way[highway][maxspeed=~/^6. mph$/] {
+    color: #833;
+}
+way[highway][maxspeed=~/^7. mph$/] {
+    color: #784;
+}
+way[highway][maxspeed=~/^8. mph$/] {
+    color: #685;
+}
+way[highway=service] {
+    color: #EEE;
+    z-index: -1;
+}
+
+* {
+   fill-color: none;
+   text-color: none;
 }
