@@ -1,0 +1,22 @@
+canvas {
+    background-color: #dff;
+    default-points: false;
+    default-lines: false;
+}
+
+/* base colors and widths */
+
+relation[boundary=administrative] > way {
+    color: black;
+    width: 1;
+}
+
+relation[boundary=administrative][admin_level=6] > way {
+    color: blue;
+    width: 2;
+    z-index: 1;
+}
+* {
+   fill-color: none;
+   text-color: none;
+}
