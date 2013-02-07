@@ -5,6 +5,11 @@ canvas {
 }
 
 /* base colors and widths */
+relation[boundary=administrative] > way {
+    color: #ddd;
+    width: 1;
+    dashes: 12,2,4,2;
+}
 
 way[highway] {
     color: #bbb;
@@ -15,6 +20,15 @@ way[highway=motorway] {
 }
 way[highway=primary], way[highway=secondary] {
     width: 2;
+}
+way|z1-12[highway=residential],
+way|z1-15[highway=footway],
+way|z1-15[highway=path],
+way|z1-15[highway=track],
+way|z1-15[highway=moving_walkway],
+way|z1-15[highway=pedestrian],
+way|z1-15[highway=service] {
+    width: 0;
 }
 
 /* value-specific styles */
@@ -29,30 +43,29 @@ way[highway][maxspeed=~/mph$/] {
     dashes: 0;
     z-index: 1;
 }
+way[highway][maxspeed=~/^1. mph$/] {
+    color: #419E08;
+}
 way[highway][maxspeed=~/^2. mph$/] {
-    color: #383;
+    color: #6F9E08;
 }
 way[highway][maxspeed=~/^3. mph$/] {
-    color: #473;
+    color: #AFB509;
 }
 way[highway][maxspeed=~/^4. mph$/] {
-    color: #563;
+    color: #B59309;
 }
 way[highway][maxspeed=~/^5. mph$/] {
-    color: #743;
+    color: #C27B0A;
 }
 way[highway][maxspeed=~/^6. mph$/] {
-    color: #833;
+    color: #C2560A;
 }
 way[highway][maxspeed=~/^7. mph$/] {
-    color: #784;
+    color: #C21F0A;
 }
 way[highway][maxspeed=~/^8. mph$/] {
-    color: #685;
-}
-way[highway=service] {
-    color: #EEE;
-    z-index: -1;
+    color: #A6073F;
 }
 
 * {
